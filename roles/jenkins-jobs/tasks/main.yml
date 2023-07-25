@@ -1,4 +1,4 @@
 - name: setup pipeline
-  ansible.builtin.import_task:
+  ansible.builtin.include_tasks:
     file: job.yml
   loop: "{{ jobs }}"

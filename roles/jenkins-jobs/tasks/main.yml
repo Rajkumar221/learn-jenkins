@@ -1,4 +1,5 @@
 - name: setup pipeline
   ansible.builtin.include_tasks:
     file: job.yml
+    remote_src: yes
   loop: "{{ jobs }}"

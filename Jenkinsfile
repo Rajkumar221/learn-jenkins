@@ -128,50 +128,50 @@
 //     }
 // }
 
+// pipeline {
+//     agent { node {label 'workstation' } }
+
+//     triggers { pollSCM('H/2 * * * *') }
+
+//     parameters {
+//         string(name: 'ENV', defaultValue: 'dev', description: 'Environment to deploy')
+//     }
+
+//     stages {
+//         stage('Build') {
+//             steps {
+//                 echo 'Building the project...'
+//                 // Add your build commands here
+//             }
+//         }
+
+//         stage('Test') {
+//             steps {
+//                 echo 'Running tests...'
+//                 // Add your test commands here
+//             }
+//         }
+
+//         stage('Deploy') {
+//             steps {
+//                 echo "Deploying the application to ${params.ENV} environment..."
+//                 // Add your deployment commands here, using the ENV parameter
+//             }
+//         }
+//         stage('message') {
+//             steps {
+//                 echo 'Hellow World'
+//             }
+//         }
+//     }
+// }
+
+
 pipeline {
     agent { node {label 'workstation' } }
 
     triggers { pollSCM('H/2 * * * *') }
 
-    parameters {
-        string(name: 'ENV', defaultValue: 'dev', description: 'Environment to deploy')
-    }
-
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building the project...'
-                // Add your build commands here
-            }
-        }
-
-        stage('Test') {
-            steps {
-                echo 'Running tests...'
-                // Add your test commands here
-            }
-        }
-
-        stage('Deploy') {
-            steps {
-                echo "Deploying the application to ${params.ENV} environment..."
-                // Add your deployment commands here, using the ENV parameter
-            }
-        }
-        stage('message') {
-            steps {
-                echo 'Hellow World'
-            }
-        }
-    }
-}
-
-
-pipeline {
-    agent { node {label 'workstation' } }
-
-    triggers { pollSCM('H/2 * * * *') }
-    
     stages {
         stage('Build') {
             steps {

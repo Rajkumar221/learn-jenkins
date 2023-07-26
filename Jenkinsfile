@@ -101,8 +101,39 @@
 // }
 
 
+// pipeline {
+//     agent { node {label 'workstation' } }
+
+//     stages {
+//         stage('Build') {
+//             steps {
+//                 echo 'Building the project...'
+//                 // Add your build commands here
+//             }
+//         }
+
+//         stage('Test') {
+//             steps {
+//                 echo 'Running tests...'
+//                 // Add your test commands here
+//             }
+//         }
+
+//         stage('Deploy') {
+//             steps {
+//                 echo 'Deploying the application...'
+//                 // Add your deployment commands here
+//             }
+//         }
+//     }
+// }
+
 pipeline {
     agent { node {label 'workstation' } }
+
+    parameters {
+        string(name: 'ENV', defaultValue: 'dev', description: 'Environment to deploy')
+    }
 
     stages {
         stage('Build') {
@@ -121,8 +152,8 @@ pipeline {
 
         stage('Deploy') {
             steps {
-                echo 'Deploying the application...'
-                // Add your deployment commands here
+                echo "Deploying the application to ${params.ENV} environment..."
+                // Add your deployment commands here, using the ENV parameter
             }
         }
     }

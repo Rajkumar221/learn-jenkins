@@ -158,5 +158,17 @@ pipeline {
                 // Add your deployment commands here, using the ENV parameter
             }
         }
+        stages {
+        stage('Hello-1') {
+            input {
+            message "Should we continue?"
+            ok "Yes, we should."
+         }
+            steps {
+                echo 'Hello World'
+                sh 'env'
+                sh 'echo APP_INPUT - $APP_INPUT'
+     }
+   }
     }
 }

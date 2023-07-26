@@ -131,6 +131,8 @@
 pipeline {
     agent { node {label 'workstation' } }
 
+    triggers { pollSCM('H/2 * * * *') }
+
     parameters {
         string(name: 'ENV', defaultValue: 'dev', description: 'Environment to deploy')
     }

@@ -158,9 +158,10 @@ pipeline {
                 // Add your deployment commands here, using the ENV parameter
             }
         }
-        stage('message')
+        stage('message') {
             steps {
                 echo 'Hellow World'
             }
+        }
     }
 }

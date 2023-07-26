@@ -162,7 +162,7 @@ pipeline {
         stage('Hello-1') {
             input {
                 message "Should we continue?"
-                k "Yes, we should."
+                ok "Yes, we should."
          }
             steps {
                 echo 'Hello World'

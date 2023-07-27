@@ -4,5 +4,6 @@
   vars:
     jobs:
       - learn-jenkins
+      - micro-css
   roles:
     - jenkins-jobs

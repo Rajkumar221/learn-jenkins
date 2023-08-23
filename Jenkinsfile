@@ -167,41 +167,41 @@ pipeline {
 // }
 
 
-pipeline {
-    agent { node {label 'workstation' } }
+// pipeline {
+//     agent { node {label 'workstation' } }
 
-    triggers { pollSCM('H/2 * * * *') }
+//     triggers { pollSCM('H/2 * * * *') }
 
-    stages {
-        stage('Build') {
-            steps {
-                echo 'Building the project...'
-                // Add your build commands here
-            }
-        }
+//     stages {
+//         stage('Build') {
+//             steps {
+//                 echo 'Building the project...'
+//                 // Add your build commands here
+//             }
+//         }
 
-        stage('Test') {
-            parallel {
-                stage('Unit Tests') {
-                    steps {
-                        echo 'Running unit tests...'
-                        // Add commands for running unit tests
-                    }
-                }
-                stage('Integration Tests') {
-                    steps {
-                        echo 'Running integration tests...'
-                        // Add commands for running integration tests
-                    }
-                }
-            }
-        }
+//         stage('Test') {
+//             parallel {
+//                 stage('Unit Tests') {
+//                     steps {
+//                         echo 'Running unit tests...'
+//                         // Add commands for running unit tests
+//                     }
+//                 }
+//                 stage('Integration Tests') {
+//                     steps {
+//                         echo 'Running integration tests...'
+//                         // Add commands for running integration tests
+//                     }
+//                 }
+//             }
+//         }
 
-        stage('Deploy') {
-            steps {
-                echo 'Deploying the application...'
-                // Add your deployment commands here
-            }
-        }
-    }
-}
+//         stage('Deploy') {
+//             steps {
+//                 echo 'Deploying the application...'
+//                 // Add your deployment commands here
+//             }
+//         }
+//     }
+// }

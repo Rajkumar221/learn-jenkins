@@ -205,3 +205,45 @@ pipeline {
 //         }
 //     }
 // }
+
+
+pipeline {
+
+  agent { node { label 'workstation' } }
+
+  stages {
+    stage(Code Checkout) {
+        steps {
+          echo 'code checkout'
+        }
+    }
+
+    stage(Build) {
+      steps {
+        echo 'Build'
+      }
+    }
+
+    stage(Unit Tests) {
+      steps {
+        echo 'unit tests'
+      }
+    }
+
+    stage(Code Analysis)
+      steps {
+        echo 'code Analysis'
+      }
+
+    stage(Security Scans) {
+      steps {
+        echo 'security scans'
+      }
+    }
+
+    stage(Publish a Artifact) {
+      steps {
+        echo 'publish a artifact'
+      }
+    }
+}
